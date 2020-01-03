@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Zoeyfull"
+title                    : "for zoey-full life"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "clamWell(Zoey)"
@@ -26,7 +26,7 @@ baseurl                  : ""
 repository               : "clamWell/clamWell.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/zo.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : " "# overrides the website title displayed in the masthead, use " " for no title
+masthead_title           : "오늘만 삽니다" # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -107,9 +107,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "KIM EUGEN"
+  name             : "KIM EUGENE(ZOEY)"
   avatar           : "/assets/images/profile.jpg"  # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "producing Interactive newsGraphic, SPA based on journalism & has ongoing Interest in data visualization, uiux, front-end dev."
+  bio              : "producing something based on journalism & has ongoing Interest in data visualization, uiux, front-end dev."
   location         : "Seoul, Korea"
   email            :
   links:
