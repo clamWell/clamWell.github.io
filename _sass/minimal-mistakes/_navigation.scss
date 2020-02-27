@@ -184,7 +184,8 @@
     margin: 0 1rem;
     color: $masthead-link-color;
     text-decoration: none;
-
+	font-size: 0.8em;
+	color:#53595e;
     &:hover {
       color: $masthead-link-color-hover;
     }

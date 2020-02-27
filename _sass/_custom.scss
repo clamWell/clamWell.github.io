@@ -1,0 +1,29 @@
+/* ==========================================================================
+   custom CSS
+   ========================================================================== */
+.sidebar {
+	.author__name { font-weight: 400; font-size: 0.85em; }
+}
+a {
+  color: #3c3e4c;
+  &:visited {
+    color:  #464646;
+  }
+}
+
+.sidebar p, .sidebar li {  font-size: .65em;  line-height: 1.4;}
+.page__title {  line-height: 1.3; font-size: 1.2em;}
+.archive__item a {  text-decoration: none;}
+.greedy-nav .visible-links a:before { height: 1px;}
+.greedy-nav a.site-logo { display:none; }
+.page__title { font-family: 'Noto Sans KR', 'Apple SD Gothic Neo','맑은 고딕';}
+.page__content p, .page__content li { font-size: 0.9em;  line-height: 1.55;}
+.profile-list h3 {  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo','맑은 고딕'; }
+.profile-list .list-type { margin-top: 5em; }
+.profile-list .list-type > div {margin: 2em 0;}
+.profile-list .list-type > div h3 { margin: 0.5em 0; }
+.profile-list .list-type > div > ul {margin: 0.5em 0;}
+.profile-list .list-type > div > ul li {  margin-bottom: 0.1em;}
+.profile-list .list-type > div > ul li p {margin: 0.5em 0; }
+.profile-list .list-type > div > ul li p .eng {  font-size: 0.8em; opacity: 0.6;}
+.profile-list .list-type > div > ul li p .block { display: block; }
