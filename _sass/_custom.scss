@@ -17,13 +17,35 @@ a {
 .greedy-nav .visible-links a:before { height: 1px;}
 .greedy-nav a.site-logo { display:none; }
 .page__title { font-family: 'Noto Sans KR', 'Apple SD Gothic Neo','맑은 고딕';}
-.page__content p, .page__content li { font-size: 0.9em;  line-height: 1.55;}
+.page__content p, .page__content li { font-size: 0.9em;  line-height: 1.7;}
 .profile-list h3 {  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo','맑은 고딕'; }
+.profile-list a.out-link { 
+	text-decoration: none; border-bottom: 1px dotted #555;
+	&:hover {
+		border-bottom: 1px solid #555;
+	}
+}
 .profile-list .list-type { margin-top: 5em; }
 .profile-list .list-type > div {margin: 2em 0;}
-.profile-list .list-type > div h3 { margin: 0.5em 0; }
-.profile-list .list-type > div > ul {margin: 0.5em 0;}
-.profile-list .list-type > div > ul li {  margin-bottom: 0.1em;}
-.profile-list .list-type > div > ul li p {margin: 0.5em 0; }
-.profile-list .list-type > div > ul li p .eng {  font-size: 0.8em; opacity: 0.6;}
+.profile-list .list-type > div h3 { font-family: 'Noto Sans KR', 'Apple SD Gothic Neo','맑은 고딕';margin: 0.5em 0; font-size: 0.9em;  padding-left: 1em;  border-left: 2px dotted #a9a9a9;}
+.profile-list .list-type > div > ul { margin: 0.5em 0;  padding: 0; padding-left: 1.5em; }
+.profile-list .list-type > div > ul li {  margin: 1em 0; list-style: none;}
+.profile-list .list-type > div > ul li p { margin: 0; }
+.profile-list .list-type > div > ul li p b { }
+.profile-list .list-type > div > ul li p.date {  font-size: 0.8em; opacity: 0.6;}
+.profile-list .list-type > div > ul li p .eng {  font-size: 0.8em; opacity: 0.8; padding-left: 0.4em;}
 .profile-list .list-type > div > ul li p .block { display: block; }
+.profile-list .list-type > div > ul li p .car-type { font-size: 0.8em; opacity: 0.6; padding-left: 0.8em;}
+
+.profile-list .list-type .skill-list { margin: 0.5em 0; padding: 0; padding-left: 1.5em;}
+.profile-list .list-type .description { font-size: 0.85em; margin: 1em 0; line-height: 1.7;}
+.profile-list .list-type .skill-list h4 { font-family: 'Noto Sans KR', 'Apple SD Gothic Neo','맑은 고딕';}
+.profile-list .list-type .skill-list ul { margin: 0.5em 0;  padding: 0; padding-left: 1em; }
+.profile-list .list-type .skill-list ul li { margin: 0.2em 0; font-size: 0.8em; line-height:1.7; list-style-type: square; }
+
+.profile-list .list-type .awards-list {margin: 0.5em 0; padding: 0; padding-left: 1.5em;}
+.profile-list .list-type .awards-list h4 {font-family: 'Noto Sans KR', 'Apple SD Gothic Neo','맑은 고딕';}  
+.profile-list .list-type .awards-list ul { margin: 0.5em 0;  padding: 0; padding-left: 1em;}
+.profile-list .list-type .awards-list ul li { margin: 0.2em 0; font-size: 0.8em; line-height:1.7; list-style-type: square;}
+.profile-list .list-type .awards-list ul li .year {font-size: 0.8em; opacity: 0.6; padding: 0 0.3em;}
+.profile-list .list-type .awards-list ul li .from {font-size: 0.8em; opacity: 0.8; padding: 0 0.3em;}

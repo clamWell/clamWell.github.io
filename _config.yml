@@ -111,7 +111,7 @@ author:
   avatar           : "/assets/images/profile-sunset.png"  # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "producing something { $news, $web, $video… } based on journalism & has on-going interest in uiux, Front-end dev, data visualization."
   location         : "Seoul, Korea"
-  email            :
+  email            : "pepesi258@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
