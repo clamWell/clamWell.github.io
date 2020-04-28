@@ -19,7 +19,7 @@ a {
 .page__title { font-family: 'Noto Sans KR', 'Apple SD Gothic Neo','맑은 고딕';}
 .page__content p, .page__content li { font-size: 0.9em;  line-height: 1.7;}
 .profile-list h3 {  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo','맑은 고딕'; }
-.profile-list a.out-link { 
+.profile-list a.out-link {
 	text-decoration: none; border-bottom: 1px dotted #555;
 	&:hover {
 		border-bottom: 1px solid #555;
@@ -44,8 +44,13 @@ a {
 .profile-list .list-type .skill-list ul li { margin: 0.2em 0; font-size: 0.8em; line-height:1.7; list-style-type: square; }
 
 .profile-list .list-type .awards-list {margin: 0.5em 0; padding: 0; padding-left: 1.5em;}
-.profile-list .list-type .awards-list h4 {font-family: 'Noto Sans KR', 'Apple SD Gothic Neo','맑은 고딕';}  
+.profile-list .list-type .awards-list h4 {font-family: 'Noto Sans KR', 'Apple SD Gothic Neo','맑은 고딕';}
 .profile-list .list-type .awards-list ul { margin: 0.5em 0;  padding: 0; padding-left: 1em;}
 .profile-list .list-type .awards-list ul li { margin: 0.2em 0; font-size: 0.8em; line-height:1.7; list-style-type: square;}
 .profile-list .list-type .awards-list ul li .year {font-size: 0.8em; opacity: 0.6; padding: 0 0.3em;}
 .profile-list .list-type .awards-list ul li .from {font-size: 0.8em; opacity: 0.8; padding: 0 0.3em;}
+
+.page__content h3 { font-size: 0.95em;  letter-spacing: -0.03em; font-weight: 900;}
+.page__content p { line-height: 1.7;  letter-spacing: -0.015em;font-size: 0.8em;}
+.page__content span.sm { font-size: 0.8em; opacity:0.7; }
+.page__content li { line-height: 1.7;  letter-spacing: -0.015em;font-size: 0.8em; }
