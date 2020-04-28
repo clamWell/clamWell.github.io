@@ -9,6 +9,10 @@ tags:
   - Jekyll
   - Github
 last_modified_at: 2020-04-27T08:06:00-05:00
+
+toc: true
+toc_sticky: true # 스크롤 내릴때 같이 내려가는 목차
+
 ---
 
 ### github.io 블로그
@@ -62,7 +66,7 @@ jekyll이 제공하는 아름다운 서비스가 또 있습니다. 바로 jekyll
 
 
 ### ABOUT 페이지 추가
-루트 디렉토리 아래 `_pages`에 기본 블로그 포스팅 외에 별도의 HTML 페이지들을 담아 둘 수 있습니다. 본인을 소개하는 ABOUT 페이지를 별도로 퍼블리싱 해준 후 상단 네비게이션에 해당하는 navation.yml에서 항목을 추가해줬습니다.
+루트 디렉토리 아래 `_pages`에 기본 블로그 포스팅 외에 별도의 HTML 페이지들을 담아 둘 수 있습니다. minimal-stakes 테마는 몇가지 샘플 페이지(`/docs/_pages`참고)들을 제공하기도 합니다. 저는 본인을 소개하는 어바웃 페이지를 별도로 퍼블리싱 해준 후 상단 네비게이션에 해당하는 navigation.yml에서 항목을 추가해줬습니다.
 
 
 ### 완성
