@@ -241,6 +241,8 @@ whitelist:
   - jekyll-feed
   - jekyll-include-cache
 
+gems:
+   - jekyll-sitemap
 
 # Archives
 #  Type
