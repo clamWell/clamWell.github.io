@@ -29,7 +29,7 @@ a {
 .profile-list .list-type > div {margin: 2em 0;}
 .profile-list .list-type > div h3 { font-family: 'Noto Sans KR', 'Apple SD Gothic Neo','맑은 고딕';margin: 0.5em 0; font-size: 0.9em;  padding-left: 1em;  border-left: 2px dotted #a9a9a9;}
 .profile-list .list-type > div > ul { margin: 0.5em 0;  padding: 0; padding-left: 1.5em; }
-.profile-list .list-type > div > ul li {  margin: 1em 0; list-style: none;}
+.profile-list .list-type > div > ul li {  margin: 1em 0; list-style: none; font-size: 1em;}
 .profile-list .list-type > div > ul li p { margin: 0; }
 .profile-list .list-type > div > ul li p b { }
 .profile-list .list-type > div > ul li p.date {  font-size: 0.8em; opacity: 0.6;}
@@ -37,8 +37,12 @@ a {
 .profile-list .list-type > div > ul li p .block { display: block; }
 .profile-list .list-type > div > ul li p .car-type { font-size: 0.8em; opacity: 0.6; padding-left: 0.8em;}
 
+.profile-list .spec-graph { margin: 1.5em 0; }
+.profile-list .spec-graph img { display:block; margin: 0 auto; }
+
 .profile-list .list-type .skill-list { margin: 0.5em 0; padding: 0; padding-left: 1.5em;}
-.profile-list .list-type .description { font-size: 0.85em; margin: 1em 0; line-height: 1.7;}
+.profile-list .list-type .description {}
+.profile-list .list-type .description p { font-size: 0.85em; margin: 1em 0; line-height: 1.6; margin: 0.3em 0;}
 .profile-list .list-type .skill-list h4 { font-family: 'Noto Sans KR', 'Apple SD Gothic Neo','맑은 고딕';}
 .profile-list .list-type .skill-list ul { margin: 0.5em 0;  padding: 0; padding-left: 1em; }
 .profile-list .list-type .skill-list ul li { margin: 0.2em 0; font-size: 0.8em; line-height:1.7; list-style-type: square; }
@@ -52,7 +56,36 @@ a {
 
 .page__content h3 { font-size: 0.95em;  letter-spacing: -0.03em; font-weight: 900;}
 .page__content p { line-height: 1.7;  letter-spacing: -0.015em;font-size: 0.8em;}
-.page__content span.sm { font-size: 0.8em; opacity:0.7; }
+.page__content span.sm { font-size: 0.8em; opacity:0.7;  color: #61646b;}
 .page__content li { line-height: 1.7;  letter-spacing: -0.015em;font-size: 0.8em; }
 
 .archive__item-title { font-size: 1em; }
+
+/***** 모바일 Portraits ****/
+@media screen and (max-width: 800px) {
+.profile-list .list-type>div h3 { font-size: 1.1em; }
+.profile-list .list-type>div>ul { padding-left: 0.8em; }
+.profile-list .list-type>div>ul li { font-size: 0.9em; }
+.profile-list .list-type>div>ul li p { font-size: 1em; }
+.profile-list .list-type .skill-list { padding-left: 0.5em; }
+.profile-list .list-type .awards-list { padding-left: 0.5em; }
+.profile-list .spec-graph { margin: 1em 0; }
+.profile-list .spec-graph img { width: 100%; }
+.profile-list .list-type .description p { font-size: 0.9em;}
+
+.page__content p { font-size: 0.9em;}
+.page__content ul, .page__content ol { padding-left: 1.5em; }
+.page__content ul li, .page__content ol li { font-size: 0.9em; margin-bottom: 0.2em; }
+.page__content h3 { font-size: 1.1em; }
+.page__content h4 { font-size: 1em; }
+.page__content span.sm { line-height: 1.5em;  display: block;margin-top: 0.5em;}
+
+
+
+}
+
+/****** 모바일 Landscape *****/
+@media (max-width: 800px) and (orientation: landscape){
+
+
+}
