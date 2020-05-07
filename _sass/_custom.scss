@@ -61,6 +61,45 @@ a {
 
 .archive__item-title { font-size: 1em; }
 
+
+.portfolio-area {
+     width: 100%;margin-top: 1em;
+
+	.port-type-list { width: 100%; transform: translateX(30px);}
+	.slider { width: 100%; width:900px; position: relative;display: block;box-sizing:border-box; margin: 0; margin-bottom: 2em; }
+	.slider-header {margin-bottom: 0.5em;}
+	.slider-title { color:#272a32; font-size: 1em; margin-bottom: 0;  }
+	.slider-title span.eg { font-size: 0.7em;letter-spacing: 0em;color:#838387; margin-left: 10px; }
+	.slider-wrapper { position: relative; width: 900px; overflow: hidden; margin: 0 auto; }
+	.slider-body { width: 100%;  width: 900px;  overflow: hidden; }
+	.slider-body ul {
+		width: 1200px;list-style:none;position: relative;margin: 0; padding: 0; left:0;
+		&::after { clear: both; content:""; display:block; }
+	}
+	.slider-body ul li { 
+		display: inline-block; float: left; width: 300px; cursor: pointer; 
+		&:hover> div > div> .item-title { text-decoration: underline; }
+		&:hover> div > div> .item-thumb { box-shadow: 3px 3px 10px rgba(78, 78, 78, 0.2); border: 1px solid #6b6b6b; transform: scale(1); }
+	}
+	.each-item-wrap { box-sizing: border-box; padding: 0 0.5em; width: 100%; }
+	.slider-item { 
+		position: relative; 
+		.item-thumb { border-radius: 3px; overflow: hidden; border: 1px solid transparent;  transition:all 0.2s ease 0s;  margin-bottom: 0.5em; transform: scale(0.97);}
+		.item-thumb > img { }
+		.item-title { color:#272a32;  font-size: 0.8em;font-weight: bold; margin-bottom: 0; }
+		.date {  color:#272a32;  font-size: 0.7em; opacity:0.5; position: absolute; bottom: 0; right: 0; }
+	}
+	.arrow {
+		background: rgba(255,255,255,0.6); box-sizing: border-box; padding: 5px; z-index: 2;
+		img { display: block; }
+		&:hover > img { opacity:1; }
+	}
+	.arrow img { width:100%; opacity:0.6;  }
+	.prev { position: absolute; top: 50%; margin-top: -15px; left: -30px; cursor: pointer;width: 25px; margin-top: -15px; }
+	.next { position: absolute; top: 50%; margin-top: -15px; right: -30px; cursor: pointer;width: 25px; margin-top: -15px;}
+}
+
+
 /***** 모바일 Portraits ****/
 @media screen and (max-width: 800px) {
 .profile-list .list-type>div h3 { font-size: 1.1em; }
