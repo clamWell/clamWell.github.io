@@ -73,7 +73,7 @@ a {
 	.slider-wrapper { position: relative; width: 900px; overflow: hidden; margin: 0 auto; }
 	.slider-body { width: 100%;  width: 900px;  overflow: hidden; }
 	.slider-body ul {
-		width: 1200px;list-style:none;position: relative;margin: 0; padding: 0; left:0;
+		width: 1200px; list-style:none;position: relative;margin: 0; padding: 0; left:0;
 		&::after { clear: both; content:""; display:block; }
 	}
 	.slider-body ul li { 
@@ -99,6 +99,71 @@ a {
 	.next { position: absolute; top: 50%; margin-top: -15px; right: -30px; cursor: pointer;width: 25px; margin-top: -15px;}
 }
 
+.port-v-wrap {
+	.port-v {
+		width:100%; 
+		.item-category {color: #272a32; font-size: 0.8em; margin-bottom: 0.2em;color: #7a8288;}
+		.item-title { font-size: 1.5em; font-weight: bold; line-height: 1; margin: 0; margin-bottom: 0.5em; padding-bottom: 0.5em; border-bottom: 1px solid #dcdcdc;}
+		.desc-list {
+			.desc {
+				margin: 1em 0;
+				p { margin: 0; margin-bottom: 0.5em;font-size: 0.8em;}
+			}
+			.desc-text-kr {font-size: 1em;}
+			.desc-text-eng { font-size: 0.85em; color: #899196;}
+			.desc-tb { 
+				margin: 1.5em 0; padding-left: 1em;border-left: 4px solid #6f777d;
+				p { 
+					margin: 0;  margin-bottom: 0.2em;
+					.th { margin-right: 20px;  color: #6f777d; }
+				}
+				.url a { text-decoration:underline; }
+			}
+			.tag {
+				span {display: inline-block;padding: 2px 8px; border:1px solid #7d8286; border-radius: 4px;font-size: 0.8em; color: #53595e; margin: 0px 2px;}
+			}
+		}
+		.screenshot-list {
+			margin: 2em 0; 
+			.img-holder {
+				margin: 0.5em 0;
+				border-radius: 4px; overflow:hidden; 
+				border: 1px solid #ddd;
+				width: 100%;
+				max-width: 800px;
+				img {width: 100%;}
+			}	
+		}
+	}
+
+	.port-reco {
+		.head {  font-size: 0.9em; margin-top: 50px; color: #4d4d4d;font-weight: bold; text-align:center;}
+		ul {
+			list-style:none;position: relative;margin: 0; padding: 0; left:0;
+			li{
+				width: 31%;box-sizing: border-box; margin: 0 1%; display: inline-block; float: left;
+				.each-reco-item{
+					background: #262a2d;  box-shadow: 5px 5px 8px rgba(0,0,0,0.05); border-radius: 3px;
+					.item-thumb {
+						img {width:100%;}
+					}
+					.item-text {
+						width:100%; box-sizing: border-box; padding: 10px; color:#fff; 
+						p{margin:0;}
+						.item-category { font-size:0.9em; }
+						.item-title {font-size:1em; }
+						.date { font-size:0.75em; }
+					}
+					
+				}
+			}
+			&::after { clear: both; content:""; display:block; }
+		}
+	}
+}
+
+
+
 
 /***** 모바일 Portraits ****/
 @media screen and (max-width: 800px) {
@@ -119,7 +184,8 @@ a {
 .page__content h4 { font-size: 1em; }
 .page__content span.sm { line-height: 1.5em;  display: block;margin-top: 0.5em;}
 
-
+.port-v-wrap .port-v .item-title {font-size: 1.3em;}
+.port-v-wrap .port-v .desc-list .desc p {     font-size: 0.9em;}
 
 }
 
