@@ -114,7 +114,7 @@ a {
 			.desc-tb { 
 				margin: 1.5em 0; padding-left: 1em;border-left: 4px solid #6f777d;
 				p { 
-					margin: 0;  margin-bottom: 0.2em;
+					margin: 0;  margin-bottom: 0.2em;font-size: 0.7em;
 					.th { margin-right: 20px;  color: #6f777d; }
 				}
 				.url a { text-decoration:underline; }
@@ -128,7 +128,6 @@ a {
 			.img-holder {
 				margin: 0.5em 0;
 				border-radius: 4px; overflow:hidden; 
-				border: 1px solid #ddd;
 				width: 100%;
 				max-width: 800px;
 				img {width: 100%;}
@@ -141,7 +140,7 @@ a {
 		ul {
 			list-style:none;position: relative;margin: 0; padding: 0; left:0;
 			li{
-				width: 31%;box-sizing: border-box; margin: 0 1%; display: inline-block; float: left;
+				width: 48%;box-sizing: border-box; margin: 0 1%; display: inline-block; float: left;cursor: pointer;
 				.each-reco-item{
 					background: #262a2d;  box-shadow: 5px 5px 8px rgba(0,0,0,0.05); border-radius: 3px;
 					.item-thumb {
@@ -150,9 +149,9 @@ a {
 					.item-text {
 						width:100%; box-sizing: border-box; padding: 10px; color:#fff; 
 						p{margin:0;}
-						.item-category { font-size:0.9em; }
-						.item-title {font-size:1em; }
-						.date { font-size:0.75em; }
+						.item-category { font-size:0.9em; opacity: 0.85;line-height: 1;}
+						.item-title {font-size:1em;  font-weight: bold; }
+						.date { font-size:0.75em; opacity: 0.5; }
 					}
 					
 				}

@@ -8,6 +8,7 @@ author_profile: true
 
 		<div class="portfolio-area">
 			<div class="port-v-wrap">
+				<div class="go-list">목록으로 돌아가기</div>
 				<div class="port-v">
 					<p class="item-category">데이터저널리즘</p>
 					<p class="item-title">반지하실태보고서</p>
@@ -52,6 +53,19 @@ author_profile: true
 								</div>
 							</div>
 						</li>
+						<li>
+							<div class="each-reco-item">
+								<div class="item-thumb">
+									<img src="../assets/images/port/port-thumb-1.jpg" alt="썸네일1">
+								</div>
+								<div class="item-text">
+									<p class="item-category">데이터저널리즘</p>
+									<p class="item-title">반지하 실태 보고서</p>
+									<p class="date">2020.04</p>
+								</div>
+							</div>
+						</li>
+
 					</ul>
 				</div>
 			</div>
@@ -62,6 +76,7 @@ author_profile: true
 	<script>
 		$("#page-title").hide();
 
+		var cateList = ["데이터저널리즘","인터랙티브", "뉴스그래픽","SNS운영·브랜딩","카드뉴스","영상"];
 		function get_query(){
 			var url = document.location.href;
 			var qs = url.substring(url.indexOf("?") + 1).split("&");
@@ -73,7 +88,6 @@ author_profile: true
 		}
 		function makePortViewpage(itemObj){
 			var data = itemObj;
-			var cateList = ["데이터저널리즘","인터랙티브", "뉴스그래픽","SNS운영·브랜딩","카드뉴스","영상"]
 			
 			$(".port-v").find(".item-category").html(cateList[data["type"]]);
 			$(".port-v").find(".item-title").html(data["title"] );
@@ -103,7 +117,39 @@ author_profile: true
 			}	
 
 		}
+		function randomRange(n1, n2){
+			return Math.floor((Math.random() * (n2 - n1 + 1)) + n1);
+		};
+		
+		var rn_array = new Array;
+		var $recoItem = $(".port-v-wrap .port-reco ul li");
+		function pushRandomNumb(){
+			while(true) {		
+				var rn = randomRange(0, 20);
+				if (rn_array.indexOf(rn) == -1){
+					rn_array.push(rn);
+					break;
+				}
+			}
+		};
+		
+		function makeRandomNumbArr(){
+			for(r=0;r<$recoItem.length;r++){
+				pushRandomNumb();
+			}
+			makeRecoItem();
+		}
 
+		makeRandomNumbArr();
+
+		function makeRecoItem(){
+			$recoItem.each(function(i){
+				$(this).find(".item-category").html(cateList[portItemList[rn_array[i]].category]);
+				$(this).find(".item-title").html(portItemList[rn_array[i]].title);
+				$(this).find(".date").html(portItemList[rn_array[i]].date);
+				$(this).find(".item-thumb img").attr("src", "../assets/images/port/"+portItemList[rn_array[i]].thumb)
+			});
+		};	
 
 		var urlQuery = get_query();
 		var port_id = urlQuery["portid"]
@@ -113,6 +159,7 @@ author_profile: true
 		for(p=0;p<portItemList.length;p++){
 			if(portItemList[p]["id"] == port_id ){
 				PORT_ITEM_DATA = portItemList[p];
+				break;
 			}
 		}
 
@@ -120,5 +167,7 @@ author_profile: true
 
 		document.title = (PORT_ITEM_DATA["title"] +" - Code the Story")
 		makePortViewpage(PORT_ITEM_DATA);
+
+
 	</script>
 
