@@ -137,7 +137,8 @@ author_profile: true
 				var tempI = 0;
 				for(i=0;i< portItemList.length;i++){
 					if(portItemList[i]["type"]==index){
-						$sliderBody.find("ul").append("<li data-id='p"+tempI+"'><div class='each-item-wrap'><div class='slider-item'><div class='item-thumb'><img src='../assets/images/port/"+portItemList[i]["thumb"]+"' alt='썸네일'></div><p class='item-title'>"+portItemList[i]["title"]+"</p><span class='date'>"+ portItemList[i]["date"]+"</span></div></div></li>");
+						var itemClass = (portItemList[i]["able"]=="true")? "able" : "block";
+						$sliderBody.find("ul").append("<li class='"+itemClass+"' data-id='p"+tempI+"'><div class='each-item-wrap'><div class='slider-item'><div class='item-thumb'><img src='../assets/images/port/"+portItemList[i]["thumb"]+"' alt='썸네일'></div><p class='item-title'>"+portItemList[i]["title"]+"</p><span class='date'>"+ portItemList[i]["date"]+"</span></div></div></li>");
 						tempI++;
 					}else if(i!==0&&portItemList[i-1]["type"]==index && portItemList[i]["type"]!==index){
 						break;
@@ -200,7 +201,7 @@ author_profile: true
 		$(".slider-body li").on("click", function(e){
 			var itemIndex = $(this).attr("data-id").slice(-1);
 			//console.log(itemIndex);
-			location.href = ("http://localhost:4000/port_v?portid="+itemIndex);
+			location.href = ("https://clamwell.github.io/port_v?portid="+itemIndex);
 		});
 
 	</script>

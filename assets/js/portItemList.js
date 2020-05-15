@@ -19,7 +19,7 @@ var portItemList = [
     "title": "개인정보유출사건",
     "date": "2020.03",
     "thumb": "port-thumb-11.jpg",
-    "bigimage": "port_v_2_1.jpg, port_v_2_2.jpg, port_v_2_3.jpg",
+    "bigimage": "port_v_2_1.jpg, port_v_2_2.jpg, port_v_2_3.jpg,port_v_2_4.jpg",
     "link": "http://el.multicampus.com/main/credu/user/course/zu_course_NR_M.jsp?p_subj=A55581#",
     "workField": "기사작성 및 데이터 조사·가공(80%), 그래픽 제작(100%), 페이지 개발(100%)",
     "tag": "HTML, CSS, Javascript, D3.js, archive",
@@ -39,7 +39,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "3",
@@ -53,7 +53,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "4",
@@ -67,7 +67,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "5",
@@ -81,7 +81,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "6",
@@ -95,7 +95,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "7",
@@ -109,7 +109,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "8",
@@ -123,7 +123,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "9",
@@ -137,7 +137,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "10",
@@ -151,7 +151,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "11",
@@ -165,7 +165,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "12",
@@ -179,7 +179,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "13",
@@ -193,7 +193,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "14",
@@ -207,7 +207,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "15",
@@ -221,7 +221,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "16",
@@ -235,7 +235,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "17",
@@ -249,7 +249,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "18",
@@ -263,7 +263,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "19",
@@ -277,7 +277,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "20",
@@ -291,7 +291,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "21",
@@ -305,7 +305,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "22",
@@ -319,7 +319,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "23",
@@ -333,7 +333,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "24",
@@ -347,7 +347,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "25",
@@ -361,7 +361,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "26",
@@ -375,7 +375,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "27",
@@ -389,7 +389,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "28",
@@ -403,7 +403,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "29",
@@ -417,7 +417,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "30",
@@ -431,7 +431,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "31",
@@ -445,7 +445,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "32",
@@ -459,7 +459,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "33",
@@ -473,7 +473,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "34",
@@ -487,7 +487,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "35",
@@ -501,7 +501,7 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   },
   {
     "id": "36",
@@ -515,6 +515,6 @@ var portItemList = [
     "tag": null,
     "description": null,
     "descriptionEng": null,
-    "able": "true"
+    "able": "FASLE"
   }
 ];
