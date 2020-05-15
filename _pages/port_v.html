@@ -8,7 +8,9 @@ author_profile: true
 
 		<div class="portfolio-area">
 			<div class="port-v-wrap">
-				<div class="go-list">목록으로 돌아가기</div>
+				<div class="go-list">
+					<p>목록으로 돌아가기 ←</p>
+				</div>
 				<div class="port-v">
 					<p class="item-category">데이터저널리즘</p>
 					<p class="item-title">반지하실태보고서</p>
@@ -139,7 +141,6 @@ author_profile: true
 			}
 			makeRecoItem();
 		}
-
 		makeRandomNumbArr();
 
 		function makeRecoItem(){
@@ -167,6 +168,10 @@ author_profile: true
 
 		document.title = (PORT_ITEM_DATA["title"] +" - Code the Story")
 		makePortViewpage(PORT_ITEM_DATA);
+
+		$(".go-list").on("click", function(e){
+			location.href = ("https://clamwell.github.io/portfolio");
+		});
 
 
 	</script>

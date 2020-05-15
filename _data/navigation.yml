@@ -1,7 +1,9 @@
 # main links
 main:
-  - title: "About"
+  - title: "about"
     url: /about/
+  - title: "portfoilo"
+    url: /portfolio/
   - title: "Github"
     url: https://github.com/clamWell
   #- title: "Quick-Start Guide"
