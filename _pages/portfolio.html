@@ -138,7 +138,7 @@ author_profile: true
 				for(i=0;i< portItemList.length;i++){
 					if(portItemList[i]["type"]==index){
 						var itemClass = (portItemList[i]["able"]=="true")? "able" : "block";
-						$sliderBody.find("ul").append("<li class='"+itemClass+"' data-id='p"+tempI+"'><div class='each-item-wrap'><div class='slider-item'><div class='item-thumb'><img src='../assets/images/port/"+portItemList[i]["thumb"]+"' alt='썸네일'></div><p class='item-title'>"+portItemList[i]["title"]+"</p><span class='date'>"+ portItemList[i]["date"]+"</span></div></div></li>");
+						$sliderBody.find("ul").append("<li class='"+itemClass+"' data-id='p"+portItemList[i]["id"]+"'><div class='each-item-wrap'><div class='slider-item'><div class='item-thumb'><img src='../assets/images/port/"+portItemList[i]["thumb"]+"' alt='썸네일'></div><p class='item-title'>"+portItemList[i]["title"]+"</p><span class='date'>"+ portItemList[i]["date"]+"</span></div></div></li>");
 						tempI++;
 					}else if(i!==0&&portItemList[i-1]["type"]==index && portItemList[i]["type"]!==index){
 						break;

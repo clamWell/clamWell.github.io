@@ -145,6 +145,7 @@ author_profile: true
 
 		function makeRecoItem(){
 			$recoItem.each(function(i){
+				$(this).attr("data-id", "p"+portItemList[i]["id"])
 				$(this).find(".item-category").html(cateList[portItemList[rn_array[i]].category]);
 				$(this).find(".item-title").html(portItemList[rn_array[i]].title);
 				$(this).find(".date").html(portItemList[rn_array[i]].date);
