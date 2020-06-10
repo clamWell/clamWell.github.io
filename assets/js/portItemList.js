@@ -23,7 +23,7 @@ var portItemList = [
     "link": "http://el.multicampus.com/main/credu/user/course/zu_course_NR_M.jsp?p_subj=A55581#",
     "workField": "기사작성 및 데이터 조사·가공(80%), 그래픽 제작(100%), 페이지 개발(100%)",
     "tag": "HTML, CSS, Javascript, D3.js, archive",
-    "description": "<p>국내 대표 이러닝 업체 멀티캠퍼스와 협력해 진행한 개인정보보안 관련 교육 콘텐츠물입니다. 영상, 게임형식 등 다양한 콘텐츠물을 시리즈로 제작했으며 이 중 개인정보 유출에 대한 경각심을 주는 개인정보 유출 아카이브 제작을 담당했습니다.</p><p>10년간 유출된 개인정보는 2억 3천만 건에 달합니다. 2000년대 이후 국내에서 발생한 개인정보 유출 사고들을 한자리에 모아봤습니다. 정보공개청구 및 언론에 보도 등을 토대로 유출 사건들을 정리했습니다.</p><p>이후 유출 사건들을 유출의 규모, 원인 등 다양한 조건에 따라 필터링하여 조회해볼 수 있도록 작업 하였습니다. 취합한 사건 데이터를 추가적으로 분석해 하단에 기사 형태로 소개하고 있습니다.</p>",
+    "description": "<p>국내 대표 이러닝 업체 멀티캠퍼스와 협력해 진행한 개인정보보안 관련 교육 콘텐츠물입니다. 영상, 게임형식 등 다양한 콘텐츠물을 시리즈로 제작했으며 이 중 개인정보 유출에 대한 경각심을 주는 개인정보 유출 아카이브 제작을 담당했습니다.</p><p>10년간 유출된 개인정보는 2억 3천만 건에 달합니다. 2000년대 이후 국내에서 발생한 개인정보 유출 사고들을 한자리에 모아봤습니다. 정보공개청구 및 언론에 보도 등을 토대로 유출 사건들을 정리했습니다.</p><p>이후 유출 사건들을 유출의 규모, 원인 등 다양한 조건에 따라 필터링하여 조회해볼 수 있도록 작업 하였습니다. 취합한 사건 데이터를 추가적으로 분석해 하단에 기사 형태로 소개하고 있습니다.</p><p>완성된 아카이브는 카드버전, 스크롤 버전으로 나뉘어 강의 코스로 임베딩 되었습니다.</p>",
     "descriptionEng": "<p>Archiving project with the Multicampus(E-learning company). We gathered and refining 'personal Information extrusion cases' data during 2008-2019 in South Korea and visualized them.</p><p>As hooking, the danger of the crime by exploiting personal information is introduced in the beginning.</p>",
     "able": "true"
   },
@@ -51,7 +51,7 @@ var portItemList = [
     "link": "http://news.khan.co.kr/kh_storytelling/2020/minor/index.html",
     "workField": "페이지 디자인·개발(100%)",
     "tag": "HTML, CSS, Javascript, D3.js, GoogleSpreadSheets",
-    "description": "<p>사용자가 설문에 따라 자신의 특권적⇔차별적 정보를 입력하면, 응답 결과를 레이더 차트로 시각화해 보여주는 일종의 서비스 페이지입니다. 원형의 레이더 차트는 방향에 따라 위, 아래로 양면성을 갖고 있습니다. 이러한 레이더 차트를 통해 모든 개인이 어떤 면에서는 특권을 갖고 있더라도, 또 다른 면에서 차별받고 차별하는 존재임을 시각적으로 보여주고자 했습니다.</p><p>인터랙티브 차트는 D3.js로 구현했습니다. 추가적으로 구글 스프레드시트를 DB로 활용해 사용자의 응답 정보를 받아 기록하였고 이를 토대로 연령별, 혹은 성별에 따른 평균치를 사용자가 조회해볼 수 있도록 했습니다. 약 3천명의 사용자들의 설문에 참여했으며, 설문 결과 및 정성 데이터를 추가 보도에 활용했습니다.</p>",
+    "description": "<p>사용자가 설문에 따라 자신의 특권적⇔차별적 정보를 입력하면, 응답 결과를 레이더 차트로 시각화해 보여주는 서비스 페이지입니다. 원형의 레이더 차트는 방향에 따라 위, 아래로 양면성을 갖고 있습니다. 이러한 레이더 차트를 통해 모든 개인이 어떤 면에서는 특권을 갖고 있더라도, 또 다른 면에서 차별받고 차별하는 존재임을 시각적으로 보여주고자 했습니다.</p><p>인터랙티브 차트는 D3.js로 구현했습니다. 추가적으로 구글 스프레드시트를 DB로 활용해 사용자의 응답 정보를 받아 기록하였고 이를 토대로 연령별, 혹은 성별에 따른 평균치를 사용자가 조회해볼 수 있도록 했습니다. 약 3천명의 사용자들의 설문에 참여했으며, 설문 결과 및 정성 데이터를 추가 보도에 활용했습니다.</p>",
     "descriptionEng": "<p>A special news page project with the social team. With Radar-Chart graphic, we want to explain that every individual has their major and minor properties, which could be make them to be authorized but also to be discriminated by the society.</p><p>Users can make their own unique radar chart by participating simple survey on the page.</p>",
     "able": "true"
   },
@@ -75,13 +75,13 @@ var portItemList = [
     "title": "대기업브랜드지도",
     "date": "2019.01",
     "thumb": "port-thumb-5.jpg",
-    "bigimage": null,
-    "link": null,
-    "workField": null,
-    "tag": null,
-    "description": null,
-    "descriptionEng": null,
-    "able": "FASLE"
+    "bigimage": "port_v_6_1.jpg, port_v_6_2.jpg, port_v_6_3.jpg",
+    "link": "http://news.khan.co.kr/kh_storytelling/2018/brandmap/index.html",
+    "workField": "페이지 디자인·기획(100%), 데이터 조사(100%), 페이지 개발(50%)",
+    "tag": "HTML, CSS, Javascript, D3.js,  GoogleSpreadSheets",
+    "description": "<p>우리는 하루를 살아가며 다양한 상품을 소비하고, 서비스들을 이용합니다. 그중에 국내 대기업이 소유한 브랜드와 서비스의 지분을 어느 정도일까요? 개인의 소비 생활에서 대기업이 차지하는 비율, 즉 대기업 의존도를 알아보는 기획을 진행하면서 대기업의 브랜드 지도를 그려보았습니다.</p><p>지면 그래픽과 별개로 온라인에서 D3.js의 Hierarchy Bubble Chart를 이용해 대기업 브랜드의 목록을 시각화했습니다. 기업은 공정위가 지정한 대규모 기업집단 중에서도 인지도 있는 제품·브랜드를 비교적 다양한 분야에서 가지고 있는 그룹들을 대상으로 했습니다.</p>",
+    "descriptionEng": "<p>An interactive bubble chart to visualize brand map of famous South Korea corporations. A graphic was drawn by d3.js library. Users can move and zoom in/ out by clicking or dragging the map.</p>",
+    "able": "true"
   },
   {
     "id": "6",
@@ -89,13 +89,13 @@ var portItemList = [
     "title": "남북 70년",
     "date": "2018.04",
     "thumb": "port-thumb-6.jpg",
-    "bigimage": null,
-    "link": null,
-    "workField": null,
-    "tag": null,
-    "description": null,
-    "descriptionEng": null,
-    "able": "FASLE"
+    "bigimage": "port_v_7_1.jpg, port_v_7_2.jpg, port_v_7_3.jpg, port_v_7_4.jpg, port_v_7_5.jpg",
+    "link": "http://news.khan.co.kr/kh_storytelling/2018/korea/index.html",
+    "workField": "페이지 디자인·기획(100%), 페이지 개발(100%)",
+    "tag": "HTML, CSS, Javascript, D3.js",
+    "description": "<p>2018 정상회담을 기념해 사건 발생 때마다 이뤄지는 파편적인 보도를 넘어 70년간 남북관계를 돌아보는 기획을 준비했습니다. 통일연구원에서 발표한 <남북관계연표 1948~2013>를 참고해 중요한 사건 300여개를 추려내 이를 한눈에 보기 쉬운 그래픽으로 제작했습니다.</p><p>시간의 흐름을 X축에 두고 Y축 위에 사건을 뿌렸습니다. 독자들이 그래프를 확대, 축소하며 사건들을 탐험할 수 있게 했습니다. 남북관계에 긍정적인 영향을 준 사건은 파랑색으로, 부정적인 영향을 준 사건은 빨간색으로, 중립적인 성격의 사건의 경우 회색으로 나누어 표현했습니다. 비교적 중요한 사건과 그렇지 않은 사건은 투명도를 다르게 표현해 구분하였습니다. 이를 통해 사용자가 정상회담을 포함해 수많은 남북의 관계와 외교적 사건의 흐름을 파악하게 하는 것이 기획 취지입니다.</p><p>300여개의 사건들 중 같은 분류의 사건들만 따로 볼 수 있도록 사건들을 ‘무력충돌’, ‘남북회담’, ‘이산가족 상봉’, ‘문화 교류’ 등 13개의 분류로 나누습니다. 사용자는 원하는 분류의 사건들만 따로 조회해볼 수 있습니다.</p>",
+    "descriptionEng": "<p>A timeline graphic expressing flow of relation btw South and North korea by showing hundreds of important diplomatic event from 1960 to the present. the interactive graphic was drawn by d3.js library.</p>",
+    "able": "true"
   },
   {
     "id": "7",
