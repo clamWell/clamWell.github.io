@@ -10,7 +10,7 @@ var portItemList = [
     "workField": "기사작성 및 자료 조사(50%), 그래픽 제작(100%), 페이지 개발(100%)",
     "tag": "HTML, CSS, Javascript, D3.js, Data-mapping, R",
     "description": "<p>최초로 반지하의 국내 현황을 보도한 기사를 재가공해 유통한 데이터 분석 기사입니다. </p><p>단독으로 입수한 전국 반지하 현황 데이터를 동단위, 지역구 단위로 검색해 볼 수 있도록 했습니다. 전국 200여개의 시군구의 반지하 현황을 막대 그래프로 그려 수도권 집중도를 확인하고, 특히 반지하 거주 비율이 현저히 높은 서울시의 경우 서울시 지도에 시군구 별 다른 변수의 값을 통해 어떤 지역에 반지하 거주 비율이 높은지를 살펴보았습니다. </p><p>이전에 보도되지 못한 취재일지 및 현장 사진을 르포기사 형태로 재구성하였습니다.</p>",
-    "descriptionEng": "<p>A special news article page projected with the Industrial & Economic Dept of Daily News Paper <KyungHyangShinMun>. the article report the story about people who live under the ground. Underground household are being recognized after the movie <Parasite> is being hit.</p><p>I draw colorized map and pole graph by processing some geographic and demographic data of household who live under the ground. Also user can search their administrative district or election precinct to know how many neighborhood are live under the ground.</p>",
+    "descriptionEng": "<p>A special news article page projected with the Industrial & Economic Dept of Daily News Paper <KyungHyangShinMun>. the article report the story about people who live under the ground. Underground household are just being recognized after the movie <Parasite> became popular.</p><p>I draw colorized map and pole graph with demographic data of Underground household. User can search and see how many neighborhood are live under the ground by their administrative district or election precinct</p>",
     "able": "true"
   },
   {
@@ -24,7 +24,7 @@ var portItemList = [
     "workField": "기사작성 및 데이터 조사·가공(80%), 그래픽 제작(100%), 페이지 개발(100%)",
     "tag": "HTML, CSS, Javascript, D3.js, archive",
     "description": "<p>국내 대표 이러닝 업체 멀티캠퍼스와 협력해 진행한 개인정보보안 관련 교육 콘텐츠물입니다. 영상, 게임형식 등 다양한 콘텐츠물을 시리즈로 제작했으며 이 중 개인정보 유출에 대한 경각심을 주는 개인정보 유출 아카이브 제작을 담당했습니다.</p><p>10년간 유출된 개인정보는 2억 3천만 건에 달합니다. 2000년대 이후 국내에서 발생한 개인정보 유출 사고들을 한자리에 모아봤습니다. 정보공개청구 및 언론에 보도 등을 토대로 유출 사건들을 정리했습니다.</p><p>이후 유출 사건들을 유출의 규모, 원인 등 다양한 조건에 따라 필터링하여 조회해볼 수 있도록 작업 하였습니다. 취합한 사건 데이터를 추가적으로 분석해 하단에 기사 형태로 소개하고 있습니다.</p><p>완성된 아카이브는 카드버전, 스크롤 버전으로 나뉘어 강의 코스로 임베딩 되었습니다.</p>",
-    "descriptionEng": "<p>Archiving project with the Multicampus(E-learning company). We gathered and refining 'personal Information extrusion cases' data during 2008-2019 in South Korea and visualized them.</p><p>As hooking, the danger of the crime by exploiting personal information is introduced in the beginning.</p>",
+    "descriptionEng": "<p>Archiving project with the Multicampus(E-learning company). We gathered some 'personal Information extrusion cases' data during 2008-2019 in South Korea. After refined the data via google spreadSheet, I visualized them into a timeline graph.</p><p>As hooking, the danger of the crime by exploiting personal information is introduced in the beginning.</p>",
     "able": "true"
   },
   {
@@ -38,7 +38,7 @@ var portItemList = [
     "workField": "데이터 조사·가공(50%), 페이지 개발(100%)",
     "tag": "HTML, CSS, Javascript, leaflet.js",
     "description": "<p>사스, 신종플루, 메르스, 코로나19 등 21세기 이후 전 세계를 흉흉하게 만든 주요 호흡기 전염병들의 확산·대응과정을 정리한 뉴스 서비스 페이지입니다. 코로나19 창궐 초기에 바이러스에 대한 정보를 제공하기 위한 목적으로 속성으로 제작되었으며, 기존의 다른 호흡기 전염병와 코로나19의 특징을 비교하는 것에 초점을 주었습니다.</p><p>이후 leaflet.js 라이브러리를 이용해 코로나19의 전세계 감염 현황을 지도위에 시각화했습니다. 질병관리본부가 제공하는 현황 정보를 크롤링해오는 방식으로 데이터를 실시간 업데이트 했으며, 마지막 데이터 업데이트 날짜는 4월 24일입니다.</p>",
-    "descriptionEng": "<p>A story news page project with the International Dept of Daily News Paper <KyungHyangShinMun>. We spread some confirm/death cases of the corona virus over the world map. An interesting story about the virus which are spreading worldwide in 21 century are also well organized.</p>",
+    "descriptionEng": "<p>A story news page project with the International Dept of Daily News Paper <KyungHyangShinMun>. We spread some confirm/death cases of the corona virus over the world map. An interesting story about the virus which have spread worldwide since 21 century also well organized.</p>",
     "able": "true"
   },
   {
@@ -51,7 +51,7 @@ var portItemList = [
     "link": "http://news.khan.co.kr/kh_storytelling/2020/minor/index.html",
     "workField": "페이지 디자인·개발(100%)",
     "tag": "HTML, CSS, Javascript, D3.js, GoogleSpreadSheets",
-    "description": "<p>사용자가 설문에 따라 자신의 특권적⇔차별적 정보를 입력하면, 응답 결과를 레이더 차트로 시각화해 보여주는 서비스 페이지입니다. 원형의 레이더 차트는 방향에 따라 위, 아래로 양면성을 갖고 있습니다. 이러한 레이더 차트를 통해 모든 개인이 어떤 면에서는 특권을 갖고 있더라도, 또 다른 면에서 차별받고 차별하는 존재임을 시각적으로 보여주고자 했습니다.</p><p>인터랙티브 차트는 D3.js로 구현했습니다. 추가적으로 구글 스프레드시트를 DB로 활용해 사용자의 응답 정보를 받아 기록하였고 이를 토대로 연령별, 혹은 성별에 따른 평균치를 사용자가 조회해볼 수 있도록 했습니다. 약 3천명의 사용자들의 설문에 참여했으며, 설문 결과 및 정성 데이터를 추가 보도에 활용했습니다.</p>",
+    "description": "<p>사용자가 설문에 따라 자신의 특권적⇔차별적 정보를 입력하면, 응답 결과를 레이더 차트로 시각화해 보여주는 서비스 페이지입니다. 원형의 레이더 차트는 방향에 따라 위, 아래로 모두 향하는 양면성을 갖고 있습니다. 이러한 레이더 차트를 통해 모든 개인이 어떤 면에서는 특권을 갖고 있더라도, 또 다른 면에서 차별받고 차별하는 존재임을 시각적으로 보여주고자 했습니다.</p><p>인터랙티브 차트는 D3.js로 구현했습니다. 추가적으로 구글 스프레드시트를 DB로 활용해 사용자의 응답 정보를 받아 기록하였고 이를 토대로 연령별, 혹은 성별에 따른 평균치를 사용자가 조회해볼 수 있도록 했습니다. 약 3천명의 사용자들의 설문에 참여했으며, 설문 결과 및 정성 데이터를 추가 보도에 활용했습니다.</p>",
     "descriptionEng": "<p>A special news page project with the social team. With Radar-Chart graphic, we want to explain that every individual has their major and minor properties, which could be make them to be authorized but also to be discriminated by the society.</p><p>Users can make their own unique radar chart by participating simple survey on the page.</p>",
     "able": "true"
   },
