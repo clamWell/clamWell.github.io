@@ -23,7 +23,7 @@ var portItemList = [
     "link": "http://el.multicampus.com/main/credu/user/course/zu_course_NR_M.jsp?p_subj=A55581#",
     "workField": "기사작성 및 데이터 조사·가공(80%), 그래픽 제작(100%), 페이지 개발(100%)",
     "tag": "HTML, CSS, Javascript, D3.js, archive",
-    "description": "<p>국내 대표 이러닝 업체 멀티캠퍼스와 협력해 진행한 개인정보보안 관련 교육 콘텐츠물입니다. 영상, 게임형식 등 다양한 콘텐츠물을 시리즈로 제작했으며 이 중 개인정보 유출에 대한 경각심을 주는 개인정보 유출 아카이브 제작을 담당했습니다.</p><p>10년간 유출된 개인정보는 2억 3천만 건에 달합니다. 2000년대 이후 국내에서 발생한 개인정보 유출 사고들을 한자리에 모아봤습니다. 정보공개청구 및 언론에 보도 등을 토대로 유출 사건들을 정리했습니다.</p><p>이후 유출 사건들을 유출의 규모, 원인 등 다양한 조건에 따라 필터링하여 조회해볼 수 있도록 작업 하였습니다. 취합한 사건 데이터를 추가적으로 분석해 하단에 기사 형태로 소개하고 있습니다.</p><p>완성된 아카이브는 카드버전, 스크롤 버전으로 나뉘어 강의 코스로 임베딩 되었습니다.</p>",
+    "description": "<p>잊을 만 하면 보도되는 개인정보 유출 뉴스, 지난 10년간 유출된 개인정보는 몇 건일까요? 저희가 찾아내어 기록한 것만으로 2억 3천만 건이 넘습니다. 개인정보 유출에 대한 경각심을 주기 위해 2000년대 이후 국내에서 발생한 개인정보 유출 사고들을 한자리에 모아봤습니다.</p><p>이 아카이브는 국내 대표 이러닝 업체 멀티캠퍼스와 협력해 진행한 개인정보보안 관련 교육 콘텐츠 중 하나입니다. 아카이브 외에도 영상, 카드뉴스 등 다양한 교육 콘텐츠가 시리즈로 제작됐습니다.</p><p>사고 목록은 방송통신위원회 정보공개청구 및 언론 보도 등을 토대로 정리했습니다. 추가적으로 유출 사건들을 규모, 원인 등 조건에 따라 필터링하여 조회해볼 수 있도록 작업 하였습니다. 취합한 사건 데이터를 분석·정리하여 하단에 소개하고 있습니다.</p><p>완성된 아카이브는 카드버전, 스크롤 버전으로 나뉘어 강의 코스로 임베딩 되었습니다.</p>",
     "descriptionEng": "<p>Archiving project with the Multicampus(E-learning company). We gathered some 'personal Information extrusion cases' data during 2008-2019 in South Korea. After refined the data via google spreadSheet, I visualized them into a timeline graph.</p><p>As hooking, the danger of the crime by exploiting personal information is introduced in the beginning.</p>",
     "able": "true"
   },
@@ -65,7 +65,7 @@ var portItemList = [
     "link": "http://news.khan.co.kr/kh_storytelling/2019/labordeath/index.html",
     "workField": "페이지 디자인·기획(100%), 데이터 조사·가공(50%), 페이지 개발(100%), 페이지 내 기사 작성(30%)",
     "tag": "HTML, CSS, Javascript, D3.js, leaflet.js, GoogleSpreadSheets",
-    "description": "<p>2018년부터 2019년까지 2년 동안 발생한 산업재해 사망사고를 전수 조사하여 살펴본 데이터 분석 기사입니다. 사망 사고 한 명, 한 명을의 기록을 담은 디지털 아카이브의 기획 및 제작을 담당했습니다.</p><p>한국산업안전보건공단이 작성한 재해조사 의견서를 입수해 이를 토대로 사망 사고 약 2천 건의 정보를 DB화하였습니다. 이 DB를 토대로 D3.js를 이용해 2천 건의 죽음을 사람의 형상으로 시각화했습니다. 사망사고의 50%가 추락사로 인한 사망이었고, 이를 사용자들이 한눈에 확인할 수 있도록 사고 원인 유형에 따라 사람 형상의 색상 및 형태를 다르게 표현했습니다. 사고의 원인 외에도 사망자에 대한 정보, 산업장 규모 등에 따라 분류하여 볼 수 있도록 했습니다.</p><p>캘린더 히트맵 그래픽으로 일별 사망인원의 분포도를 시각화했습니다. 이를 통해 2년의 시간 동안 단 67일을 제외하고 매일 사고가 발생했음을, 하루에 10명이 넘는 사망자가 발생한 날도 있었음을 시사하고자 했습니다.</p><p>Google Map API를 활용해 사고가 발생한 위치의 위경도 값을 찾아내 이를 지도 위에 시각화했습니다.</p>",
+    "description": "<p>2018년부터 2019년까지 2년 동안 발생한 산업재해 사망사고를 전수 조사하여 살펴본 데이터 분석 기사입니다. 사망 사고 한 명, 한 명을의 기록을 담은 디지털 아카이브의 기획 및 제작을 담당했습니다.</p><p>한국산업안전보건공단이 작성한 재해조사 의견서 PDF를 입수해 약 2천 건의 사고 정보를 DB화하였습니다. 이 DB를 토대로 D3.js를 이용해 2천 건의 죽음을 사람의 형상으로 시각화했습니다. 사망사고의 50%가 추락사로 인한 사망이었고, 이를 사용자들이 한눈에 확인할 수 있도록 사고 원인 유형에 따라 사람 형상의 색상 및 형태를 다르게 표현했습니다. 사고의 원인 외에도 사망자에 대한 정보, 산업장 규모 등에 따라 분류하여 볼 수 있도록 했습니다.</p><p>캘린더 히트맵 그래픽으로 일별 사망인원의 분포도를 시각화했습니다. 이를 통해 2년의 시간 동안 단 67일을 제외하고 매일 사고가 발생했음을, 하루에 10명이 넘는 사망자가 발생한 날도 있었음을 시사하고자 했습니다.</p><p>Google Map API를 활용해 사고가 발생한 위치의 위경도 값을 찾아내 이를 지도 위에 시각화했습니다.</p>",
     "descriptionEng": "<p>A special news article page archiving thousands of death due to industrial disaster during 2018-2019. SVG graphic and line graph are drawn by D3.js & data mapping by leaflet.js</p>",
     "able": "true"
   },

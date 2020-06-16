@@ -1,6 +1,6 @@
 ---
 title:  "‘Jekyll theme’을 이용해 github.io 블로그 제작하기"
-excerpt: "개발자들은 모두 하나씩은 갖고 있다는 github.io 블로그. 전문 개발자는 아니지만 한번 해볼까 라는 마음으로 시작해봤습니다."
+excerpt: "개발자들은 모두 하나씩은 갖고 있다는 github.io 블로그를 시작해봤습니다."
 header:
   image: https://clamwell.github.io//assets/images/post01/blog-cover-cw.jpg
 categories:
