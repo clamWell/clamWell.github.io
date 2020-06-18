@@ -94,7 +94,12 @@ author_profile: true
 			$(".port-v").find(".item-category").html(cateList[data["type"]]);
 			$(".port-v").find(".item-title").html(data["title"] );
 			$(".port-v").find(".desc-text-kr").html( data["description"] );
-			if(data["descriptionEng"] !==null){$(".port-v").find(".desc-text-eng").html( data["descriptionEng"] );}
+			if(data["descriptionEng"] !==null){
+				$(".port-v").find(".desc-text-eng").show();
+				$(".port-v").find(".desc-text-eng").html( data["descriptionEng"] );}
+			else{
+				$(".port-v").find(".desc-text-eng").hide();
+			}
 			$(".port-v").find(".page-link .url").html("<a target='_blank' href='"+data["link"]+"'>"+data["link"]+"</a>");
 			$(".port-v").find(".publish-date .date").html( data["date"] );
 			$(".port-v").find(".work-field .workField").html( data["workField"] );
