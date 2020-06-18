@@ -195,9 +195,13 @@ a {
 
 .port-v { width:100%; box-sizing: border-box; overflow-x: hidden; }
 .port-v-wrap .port-v .item-title {font-size: 1.3em; line-height:1.3em;}
-.port-v-wrap .port-v .desc-list .desc p { font-size: 0.9em;}
 .port-v-wrap .go-list p:hover { left:0;}
-.port-v-wrap .port-v .desc-list .desc-tb .url a { display: inline;  word-break: break-word;}
+.port-v-wrap .port-v .desc-list {
+	.desc-tb .url a { display: inline;  word-break: break-word;}
+	.desc p { font-size: 0.9em;}
+	.tag span { margin: 2px; }
+}
+
 .portfolio-area {
 	.port-type-list{ transform: none; }
 	.slider { width:100%;box-sizing: border-box; padding: 0px 20px;}

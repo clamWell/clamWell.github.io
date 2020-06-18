@@ -1,6 +1,6 @@
-var portItemList = [
+var portItemList =[
   {
-    "id": "0",
+    "id": "1",
     "type": "0",
     "code": "underground",
     "title": "반지하 실태 보고서",
@@ -15,7 +15,7 @@ var portItemList = [
     "able": "true"
   },
   {
-    "id": "1",
+    "id": "2",
     "type": "0",
     "code": "privacy",
     "title": "도난당한 개인정보 칼이 되어 돌아오다",
@@ -30,7 +30,7 @@ var portItemList = [
     "able": "true"
   },
   {
-    "id": "2",
+    "id": "3",
     "type": "0",
     "code": "virus",
     "title": "21세기 바이러스 총망라",
@@ -45,7 +45,7 @@ var portItemList = [
     "able": "true"
   },
   {
-    "id": "3",
+    "id": "4",
     "type": "0",
     "code": "minor",
     "title": "당신은 특권을 갖고 있나요, 차별을 받고 있나요",
@@ -60,7 +60,7 @@ var portItemList = [
     "able": "true"
   },
   {
-    "id": "4",
+    "id": "5",
     "type": "0",
     "code": "labordeath",
     "title": "산업재해, 1748번의 죽음의 기록",
@@ -75,7 +75,7 @@ var portItemList = [
     "able": "true"
   },
   {
-    "id": "5",
+    "id": "6",
     "type": "0",
     "code": "brandmap",
     "title": "대기업브랜드지도",
@@ -90,7 +90,7 @@ var portItemList = [
     "able": "true"
   },
   {
-    "id": "6",
+    "id": "7",
     "type": "0",
     "code": "korea",
     "title": "남북 70년",
@@ -105,27 +105,12 @@ var portItemList = [
     "able": "true"
   },
   {
-    "id": "7",
+    "id": "8",
     "type": "0",
     "code": "salary",
     "title": "박전무 대 김대리",
     "date": "2018.04",
     "thumb": "port-thumb-7.jpg",
-    "bigimage": null,
-    "link": null,
-    "workField": null,
-    "tag": null,
-    "description": null,
-    "descriptionEng": null,
-    "able": "FASLE"
-  },
-  {
-    "id": "8",
-    "type": "0",
-    "code": "mywage",
-    "title": "월급의 역사",
-    "date": "2018.02",
-    "thumb": "port-thumb-8.jpg",
     "bigimage": null,
     "link": null,
     "workField": null,
@@ -569,4 +554,4 @@ var portItemList = [
     "descriptionEng": null,
     "able": "FASLE"
   }
-];
+]

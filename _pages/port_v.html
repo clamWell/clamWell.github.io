@@ -106,7 +106,7 @@ author_profile: true
 			
 			var tagArr = data["tag"].split(",");
 			var imgSrcArr = data["bigimage"].split(",");
-			var imgDir = Number(data["id"])+1;
+			var imgDir = Number(data["id"]);
 			tagArr.map(function(v,i,a){
 				a[i] = a[i].trim();
 			});
