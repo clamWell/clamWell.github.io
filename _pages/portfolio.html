@@ -199,7 +199,7 @@ author_profile: true
 		});
 
 		$(".slider-body li").on("click", function(e){
-			var itemIndex = $(this).attr("data-id").slice(-1);
+			var itemIndex = $(this).attr("data-id").replace("p","");
 			//console.log(itemIndex);
 			location.href = ("https://clamwell.github.io/port_v?portid="+itemIndex);
 		});
