@@ -174,10 +174,13 @@ var node = gHolder.append("g")
 ```
 
 **link**
+
 ✔ line의 두께는 각 데이터 value 변수의 값에 비례하게 했다. 이번 테스트의 경우 value가 각 형태소간의 연관관계 정도를 가리킨다. 이를 통해 선이 두꺼울 수록 두 요소간의 연관관계가 높다는 것을 보여준다.
 
 **node**
-✔ circle 의 radius 값은 마찬가지로 데이터 value 변수의 값에 비례하게 했다. 여기서 nodes 의 value 값은 문서 내에서 해당 형태소의 출현빈도이다. 즉 원의 크기가 클수록 자주 등장한 형태소를 가리킨다.   
+
+✔ circle 의 radius 값은 마찬가지로 데이터 value 변수의 값에 비례하게 했다. 여기서 nodes 의 value 값은 문서 내에서 해당 형태소의 출현빈도이다. 즉 원의 크기가 클수록 자주 등장한 형태소를 가리킨다.  
+
 ✔ circle 의 컬러 값은 따로 정의해둔 함수를 통해 칠해주었다. 각 형태소 별 미리 지정해준 그룹에 따라 색을 달리 했다.
 ```javascript
 var fillCircle = function(g){
@@ -193,6 +196,7 @@ var fillCircle = function(g){
 };
 ```
 ✔ 또한 바로 circle 노드를 append 하지 않고 다시 한번 요소의 개수만큼 g 노드를 만들어 그 안에서 각각 circle 노드를 append 하는 방식을 선택했다. 이는 circle 노드와 함께 text 노드도 추가해주어 각 요소에 데이터 라벨링을 해주기 위해서다. circle 노드 안에는 text 노드 append가 불가능하기 때문!
+
 ✔ 마지막으로 circle 요소에 콜백 함수로 따로 정의해둔 drag 함수를 바인딩해줬다. 각 요소들을 사용자가 자유자재로 드래그 조작 할 수 있게 해주기 위함이다. 이때 drag 함수 내부에는 d3에서 제공하는 `.drag()` 메소드가 선언되어 있다.
 
 #### ④ tick functionality
