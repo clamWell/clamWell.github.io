@@ -19,27 +19,31 @@ toc_sticky: true # 스크롤 내릴때 같이 내려가는 목차
 ---
 
 ## 💻 d3.js로 network chart(graph) 그려보기
-최근 업무 중에 SVG로 네트워크 그래프를 테스트 삼아 그려볼 일이 있었다. 구현방식으로는 javascript 라이브러리 d3.js의 `d3.forceSimulation()`를 활용했으며, 웹에 공개되어 있는 코드를 참고하였다.
+최근 업무 중에 SVG로 네트워크 그래프를 테스트 삼아 그려볼 일이 있었다. 구현방식으로 javascript 라이브러리 d3.js의 `d3.forceSimulation()`를 활용했으며, 웹에 공개되어 있는 코드를 참고하였다. 구글에 검색해보니 아직 한국어로 된 가이드는 많지 않은 것 같아 작업 내역을 일부 정리해봤다.
 
-네트워크 그래프는 타사에서도 자주 활용하는 시각화 모델이다. 주로 다양하게 얽힌 인물 간의 관계도를 시각화할 때 사용되곤 한다.
+네트워크 그래프는 타 언론사에서도 자주 활용하는 시각화 모델이다. 주로 다양하게 얽힌 인물 간의 관계도를 시각화할 때 사용되곤 한다.
 
-* [SBS - 신종 코로나 감염자 현황](mabu.newscloud.sbs.co.kr/202002corona/web/index.html)
+* [SBS - 신종 코로나 감염자 현황](http://mabu.newscloud.sbs.co.kr/202002corona/web/index.html)
 * [KBS - 한 눈에 보는 얽히고 설킨 MB 혐의](http://dj.kbs.co.kr/resources/2018-03-15/)
 
+![SBS마부작침의 코로나 감염 경로 네트워크 그래프](https://clamwell.github.io//assets/images/post02/img03.jpg "SBS마부작침의 코로나 감염 경로 네트워크 그래프")
+<span class="sm">SBS마부작침의 코로나 감염 경로 네트워크 그래프</span>
+
+
 이처럼 요소 간의 연결고리·관계도·연관관계를 시각화할 때 유용한 네트워크 그래프,
-d3.js를 이용해 간단하게 그려보는 작업 내역을 정리해보았다.
+d3.js를 이용해 간단하게 그려보는 방법을 알아보자!
 
 --------------------------
 
 #### 📌 준비
 d3.js 라이브러리를 사용하기 위해 소스를 CDN을 이용해 외부에서 가져온다.  
 이번 테스트에서는 v5 버전을 사용했다.
-```HTML
+```javascript
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
 ```
 
 HTML 내부 그래프가 위치할 곳에 SVG를 하나 생성해줬다.
-```HTML
+```javascript
 <div class="netwrok-graph">
     <svg id="NETWORK_GRAPH">
         <!--이곳에 그래프를 그려준다-->
@@ -73,8 +77,9 @@ networkGraph.createGraph(); // init 함수 안에서 호출
 d3.js에서 네트워크 그래프를 그리기 위해서는 `d3.forceSimulation()`를 활용해야 한다.    `d3.forceSimulation()`은 이름에서 알 수 있듯 요소간의 중력, 장력 작용을 구현해주는 메소드다.  
 네트워크 그래프를 그릴 때 사용되는 `d3.forceSimulation()`의 메소드 체이닝 구조를 먼저 살펴봤다.
 
-* Medium에 게재된 force simulations 관련글을 번역, 참조하였다.
+> Medium에 게재된 force simulations 관련글을 번역, 참조하였다.
 [Getting started with D3.js force simulations](https://medium.com/@bryony_17728/d3-js-two-v-4-network-charts-compared-8d3c66b0499c)
+
 
 `d3.forceSimulation()`의 기본 코드 구조와 각 메소드별 역할은 다음과 같다.
 ```javascript
@@ -91,7 +96,7 @@ var simulation = d3.forceSimulation()
 #### 📌 Data
 네트워크 그래프를 그릴 때 참조하는 데이터는 크게 두가지 유형으로 나뉜다. 첫번째는 **nodes**, 두번째는 **links** 이다. **nodes** 는 요소에 대한 정보 값, **links** 는 연결에 대한 정보 값을 담고 있다.
 
-![네트워크 그래프의 데이터 구조](https://clamwell.github.io//assets/images/post02/img01.JPG "네트워크 그래프의 데이터 구조")
+![네트워크 그래프의 데이터 구조](https://clamwell.github.io//assets/images/post02/img01.jpg "네트워크 그래프의 데이터 구조")
 <span class="sm">네트워크 그래프의 데이터 구조</span>
 
 ```javascript
@@ -107,7 +112,7 @@ links = [{"source": "청소년","target": "장면","value": 2},{"source": "청�
 #### 📌 d3.코드 작성하기
 이제 코드를 작성하기 위한 준비를 마치었다. 실제로 d3.js 코드를 작성해서 그래프를 그려본다.
 
-#### 데이터준비
+#### ① 데이터준비
 ```javascript
 const NETWORK_DATA = {
     links: [{}, {}, {}....],
@@ -125,7 +130,7 @@ var nodes = NETWORK_DATA.nodes.map(function(d){
 하나의 객체로 머징되어 있던 데이터 객체를 각각 나누어서 `links`, `nodes`의 변수에 할당해줬다.
 
 
-#### force simulation 선언
+#### ② force simulation 선언
 위에서 살펴봤던 `d3.forceSimulation`을 선언해준다.
 
 ```javascript
@@ -138,7 +143,7 @@ var simulation = d3.forceSimulation n(nodes)
 데이터가 담긴 `links`, `nodes`의 변수가 `d3.forceSimulation`의 인자로 전달되었다.   
 `collide` 속성을 통해 구체적으로 각 요소들 간의 간격을 명시해줬다. 이제 요소들 간 충돌이 발생하거나, 요소들이 겹치더라도 다시 명시 된 간격만큼 강제로 떨어지게 된다.
 
-#### circle 노드와 line 노드 생성
+#### ③ circle 노드와 line 노드 생성
 d3.js를 이용해 circle 노드와 line 노드를 생성해준다.
 ```javascript
 var link = gHolder.append("g")
@@ -190,7 +195,7 @@ var fillCircle = function(g){
 ✔ 또한 바로 circle 노드를 append 하지 않고 다시 한번 요소의 개수만큼 g 노드를 만들어 그 안에서 각각 circle 노드를 append 하는 방식을 선택했다. 이는 circle 노드와 함께 text 노드도 추가해주어 각 요소에 데이터 라벨링을 해주기 위해서다. circle 노드 안에는 text 노드 append가 불가능하기 때문!
 ✔ 마지막으로 circle 요소에 콜백 함수로 따로 정의해둔 drag 함수를 바인딩해줬다. 각 요소들을 사용자가 자유자재로 드래그 조작 할 수 있게 해주기 위함이다. 이때 drag 함수 내부에는 d3에서 제공하는 `.drag()` 메소드가 선언되어 있다.
 
-#### tick functionality
+#### ④ tick functionality
 
 ```javascript
 simulation.on("tick", function(){
@@ -203,12 +208,12 @@ simulation.on("tick", function(){
 ```
 마지막으로 엔진이 실시간으로 link 와 node 객체의 위치를 체크하고, 변동이 발생하면 새로운 위치를 잡아주도록(redraw) tick 기능을 추가한다.
 
-#### 스타일 추가
+#### ⑤ 스타일 추가
 ```css
 #NETWORK_GRAPH .node-label { font-size: 14px; font-weight:bold; color:#111; stroke: white;stroke-width: 1.5px;paint-order: stroke fill; text-anchor: middle;}
 ```
 circle 노드 위에 올라가는 텍스트 라벨이 잘 보이도록 css에서 스타일을 추가해준다.
 
 #### 📌 완성
-![네트워크 그래프 완성된 모습](https://clamwell.github.io//assets/images/post02/img02.JPG "네트워크 그래프 완성된 모습")
+![네트워크 그래프 완성된 모습](https://clamwell.github.io//assets/images/post02/img02.jpg "네트워크 그래프 완성된 모습")
 <span class="sm">네트워크 그래프 완성된 모습</span>
