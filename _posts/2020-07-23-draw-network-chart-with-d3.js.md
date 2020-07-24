@@ -218,6 +218,8 @@ simulation.on("tick", function(){
 ```
 circle 노드 위에 올라가는 텍스트 라벨이 잘 보이도록 css에서 스타일을 추가해준다.
 
+------------------------------
+
 #### 📌 완성
 ![네트워크 그래프 완성된 모습](https://clamwell.github.io//assets/images/post02/img02.jpg "네트워크 그래프 완성된 모습")
 <span class="sm img-caption">네트워크 그래프 완성된 모습</span>
