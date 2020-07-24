@@ -76,15 +76,15 @@ a {
 		width: 1200px; list-style:none;position: relative;margin: 0; padding: 0; left:0;
 		&::after { clear: both; content:""; display:block; }
 	}
-	.slider-body ul li { 
-		display: inline-block; float: left; width: 300px; cursor: pointer; 
+	.slider-body ul li {
+		display: inline-block; float: left; width: 300px; cursor: pointer;
 		&:hover> div > div> .item-title { text-decoration: underline; }
 		&:hover> div > div> .item-thumb { box-shadow: 3px 3px 10px rgba(78, 78, 78, 0.2); border: 1px solid #6b6b6b; transform: scale(1); }
 		&.block { pointer-events: none; opacity:0.4; }
 	}
 	.each-item-wrap { box-sizing: border-box; padding: 0 0.5em; width: 100%; }
-	.slider-item { 
-		position: relative; 
+	.slider-item {
+		position: relative;
 		.item-thumb { border-radius: 3px; overflow: hidden; border: 1px solid transparent;  transition:all 0.2s ease 0s;  margin-bottom: 0.5em; transform: scale(0.97);}
 		.item-thumb > img { }
 		.item-title { color:#272a32;  font-size: 0.8em;font-weight: bold; margin-bottom: 0; }
@@ -102,7 +102,7 @@ a {
 
 .port-v-wrap {
 	.port-v {
-		width:100%; 
+		width:100%;
 		.item-category {color: #272a32; font-size: 0.8em; margin-bottom: 0.2em;color: #7a8288;}
 		.item-title { font-size: 1.5em; font-weight: bold; line-height: 1; margin: 0; margin-bottom: 0.5em; padding-bottom: 0.5em; border-bottom: 1px solid #dcdcdc;}
 		.desc-list {
@@ -112,9 +112,9 @@ a {
 			}
 			.desc-text-kr {font-size: 1em;}
 			.desc-text-eng { font-size: 0.85em; color: #899196;}
-			.desc-tb { 
+			.desc-tb {
 				margin: 1.5em 0; padding-left: 1em;border-left: 4px solid #6f777d;
-				p { 
+				p {
 					margin: 0;  margin-bottom: 0.2em;font-size: 0.7em;
 					.th { margin-right: 20px;  color: #6f777d; }
 				}
@@ -125,19 +125,19 @@ a {
 			}
 		}
 		.screenshot-list {
-			margin: 2em 0; 
+			margin: 2em 0;
 			.img-holder {
 				margin: 0.5em 0;
-				border-radius: 4px; overflow:hidden; 
+				border-radius: 4px; overflow:hidden;
 				width: 100%;
 				max-width: 800px;
 				img {width: 100%;}
-			}	
+			}
 		}
 	}
 
 	.port-reco {
-		max-width: 800px; 
+		max-width: 800px;
 		.head {  font-size: 0.9em; margin-top: 50px; color: #4d4d4d;font-weight: bold; text-align:center;}
 		ul {
 			list-style:none;position: relative;margin: 0; padding: 0; left:0;
@@ -149,13 +149,13 @@ a {
 						img {width:100%;}
 					}
 					.item-text {
-						width:100%; box-sizing: border-box; padding: 10px; color:#fff; 
+						width:100%; box-sizing: border-box; padding: 10px; color:#fff;
 						p{margin:0;}
 						.item-category { font-size:0.9em; opacity: 0.85;line-height: 1;}
 						.item-title {  font-size: 1em; font-weight: bold; line-height: 1.4; height: 3em; margin-top: 0.4em;  margin-bottom: 0.4em; }
 						.date { font-size:0.75em; opacity: 0.5; }
 					}
-					
+
 				}
 			}
 			&::after { clear: both; content:""; display:block; }
@@ -163,15 +163,17 @@ a {
 	}
 	.go-list {
 		margin-bottom: 1em;
-		p { 
+		p {
 			font-size: 0.75em;  font-weight: bold;cursor: pointer; position: relative; left:0;transition:all 0.2s ease 0s;
 			&:hover { left:-10px;}
 		}
-	
+
 	}
 }
 
-
+div.highlighter-rouge, figure.highlight { font-size: 0.6em;}
+code.language-HTML { }
+span.img-caption {display:block;}
 
 
 /***** 모바일 Portraits ****/

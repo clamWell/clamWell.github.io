@@ -27,7 +27,7 @@ toc_sticky: true # 스크롤 내릴때 같이 내려가는 목차
 * [KBS - 한 눈에 보는 얽히고 설킨 MB 혐의](http://dj.kbs.co.kr/resources/2018-03-15/)
 
 ![SBS마부작침의 코로나 감염 경로 네트워크 그래프](https://clamwell.github.io//assets/images/post02/img03.jpg "SBS마부작침의 코로나 감염 경로 네트워크 그래프")
-<span class="sm">SBS마부작침의 코로나 감염 경로 네트워크 그래프</span>
+<span class="sm img-caption">SBS마부작침의 코로나 감염 경로 네트워크 그래프</span>
 
 
 이처럼 요소 간의 연결고리·관계도·연관관계를 시각화할 때 유용한 네트워크 그래프,
@@ -97,7 +97,7 @@ var simulation = d3.forceSimulation()
 네트워크 그래프를 그릴 때 참조하는 데이터는 크게 두가지 유형으로 나뉜다. 첫번째는 **nodes**, 두번째는 **links** 이다. **nodes** 는 요소에 대한 정보 값, **links** 는 연결에 대한 정보 값을 담고 있다.
 
 ![네트워크 그래프의 데이터 구조](https://clamwell.github.io//assets/images/post02/img01.jpg "네트워크 그래프의 데이터 구조")
-<span class="sm">네트워크 그래프의 데이터 구조</span>
+<span class="sm img-caption">네트워크 그래프의 데이터 구조</span>
 
 ```javascript
 nodes = [{"id": "청소년", "value": 3,"group": "person"},{"id": "장면","value": 3, "group": "media"},{"id": "드라마", "value": 3,"group": "media"}]
@@ -216,4 +216,4 @@ circle 노드 위에 올라가는 텍스트 라벨이 잘 보이도록 css에서
 
 #### 📌 완성
 ![네트워크 그래프 완성된 모습](https://clamwell.github.io//assets/images/post02/img02.jpg "네트워크 그래프 완성된 모습")
-<span class="sm">네트워크 그래프 완성된 모습</span>
+<span class="sm img-caption">네트워크 그래프 완성된 모습</span>
