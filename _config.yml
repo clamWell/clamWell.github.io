@@ -114,8 +114,8 @@ author:
   email            : "pepesi258@gmail.com"
   links:
     - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: mailto:pepesi258@gmail.com
+      icon: "fas fa-fw fa-briefcase"
+      #url: mailto:pepesi258@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -131,6 +131,9 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
+  	- label: "Reporter Page"
+      icon: "fas fa-fw fa-briefcase"
+      url: "http://news.khan.co.kr/reporter_article.html?id=302"
 
 # Site Footer
 footer:
