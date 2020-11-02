@@ -131,7 +131,7 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
-  	- label: "Reporter Page"
+  	- label: "ReporterPage"
       icon: "fas fa-fw fa-briefcase"
       url: "http://news.khan.co.kr/reporter_article.html?id=302"
 
