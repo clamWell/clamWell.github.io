@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+	<title>d3.js 를 이용한 픽토그램</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+	<meta name="keywords" content="d3.js">
+    <meta name="description" content="d3.js 를 이용한 픽토그램">
+
+	<!--css 스타일-->
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
+	<style type="text/css">
+	/********* RESET********/
+	* { margin:0;  padding:0; }
+	ol,ul { list-style:none; }
+	a { outline:0; text-decoration:none; color:#555; }
+	img { border:0; vertical-align:bottom; }
+
+	body { width:100%; min-height:100vh;  background:#e2e8eb;/*background: linear-gradient(150deg,#111111 26%,#44455a)*/font-family: 'Noto Sans KR', 'notokr-regular'; }
+	.wrap { width:100%; box-sizing:border-box; }
+	.bar-chart { display: inline-block; *display: inline; zoom:1; margin-right: 10px; background-color: #92b9e0; } 
+	.title { text-align: center; color:#fff; font-size: 50px; letter-spacing: -1px; opacity: 0.5; margin: 20px auto; font-weight: 100; }
+	.subtitle { text-align: center; font-size: 28px; font-weight: 300;letter-spacing: -1px;  margin: 10px auto; }
+	.chart-area { width:100%; margin-top: 60px;position: relative;}
+	.chart-area #CHART { display:block; margin: 0 auto; overflow: visible;}
+	.desc { text-align:center;  font-size: 14px; opacity: 0.7;color: #302c3f;}
+	#CHART .axis .domain {stroke-dasharray: 2; fill: none;stroke: #969696; shape-rendering: crispEdges;stroke-opacity:0;}
+	#CHART .axis .tick text {font-size: 12px;fill: #8a8a8a;}
+	#CHART .bar { fill: #dedcdb;fill-opacity: 0.5;}
+	#CHART .pole-label {  font-size: 12px;font-weight: bold; color:#555;  stroke: white; stroke-width: 1.5px; paint-order: stroke fill;  text-anchor: middle;}
+
+	.tooltip {position: absolute; background:#fff; text-align: left; padding:10px;  z-index: 2;  font-family: 'Noto Sans KR', 'notokr-regular', 'Apple SD Gothic Neo','맑은 고딕'; min-width: 180px; opacity:0;} 
+	.tooltip p {font-size:15px; line-height:1.5; font-weight:300; }
+	.tooltip .date { font-weight:bold; color:#444; }
+	.tooltip .number { font-weight:bold; margin-top: 5px; color: #111;}
+	.each-pic cirlce { z-index: 1; stroke:#fff; }
+	.pic-type-haras circle { fill:#ffb1a5; }
+	.pic-type-assault circle { fill:#ff8b49;}
+	.pic-type-r circle { fill:#ca0700; }
+	.each-pic path { z-index: 2;transform: translate(-10px, -10px);stroke: #5d0000;fill: #d0e2eb; opacity: 0.7;}
+	.pic-assiliant-prof path { fill:#ff707e; }
+	.pic-assiliant-ta path { fill:#ffb170; }
+	.pic-assiliant-staff path { fill:#f1dede; }
+	
+	.type-legend { text-align: center;  margin: 20px auto;}
+	.type-legend ul {text-align: center;display: inline; margin: 0px 20px; }
+	.type-legend ul li { display:inline; font-size:13px; margin: 0px 5px; color: #4e585c;opacity: 0.7; cursor:pointer;}
+	.type-legend ul li.on { opacity:1; color:#111; }
+	.type-legend ul li span { display: inline-block; }
+	.type-legend ul li.head { font-weight:bold; }
+	.type-legend ul li span.circle { width: 15px; height:15px;margin-right: 5px; border-radius: 50%;vertical-align: middle;}
+	.circle01{background:#ffb1a5;}
+	.circle02{background:#ff8b49;}
+	.circle03{background:#ca0700;}
+	.type-legend ul li span.path {} 
+	.type-legend ul li span.path img{ width: 25px; } 
+	</style>
+	<!--css 스타일-->
+
+	<!--외부 스크립트-->
+	<!--d3.js v3 버전 기준으로 작성. 버전 별로 문법 다르므로 항상 버전 체크할 것-->
+	<script src="https://d3js.org/d3.v3.min.js"></script> 
+	<script type="text/javascript" src="https://www.khan.co.kr/spko/js/plugin/jquery-1.11.3.min.js"></script>
+	<!--외부 스크립트-->
+
+</head>
+<body>
+	
+	<div class="wrap">
+<!-- 		<h1 class="title">Data binding & Draw bar chart</h1> -->
+		<h2 class="subtitle">고등교육기관 성폭력 사건 현황</h2>
+		<p class="desc">출처: 교육부 / 대학과 전문대학 교수, 조교 및 강사, 직원이 성폭력 사건에 연루된 현황</p>
+		<div class="legend">
+			<div class="type-legend">
+				<ul class="btn-acc-type">
+					<li class="head">사건유형</li>
+					<li data-id="type01"><span class="circle circle01"></span>성희롱</li>
+					<li data-id="type02"><span class="circle circle02"></span>성추행</li>
+					<li data-id="type03"><span class="circle circle03"></span>성폭행</li>
+				</ul>
+				<ul class="btn-acc-assil">
+					<li class="head">가해자</li>
+					<li data-id="prof"><span class="path path01"><img src="img/icon-prof.png" alt=""></span>교수</li>
+					<li data-id="ta"><span class="path path02" ><img src="img/icon-ta.png" alt=""></span>조교, 강사</li>
+					<li data-id="staff"><span class="path path03"><img src="img/icon-staff.png" alt=""></span>직원</li>
+				</ul>
+			</div>
+		</div>
+		<div class="chart-area">
+			<!-- SVG canvas 안에 차트를 그린다-->	
+			<svg id="CHART"></svg> 		
+			
+			<!-- 툴팁 -->	
+			<div class="tooltip">
+				<div class="tooltip-con">
+					<p class="date">2021.01.01</p>
+					<p class="number">0건</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<script type="text/javascript" src="pathArr.js"></script>
+	<script type="text/javascript" src="data/accData.js"></script>
+	<script src="app.js"></script> 
+</body>
+ 
+</html>
