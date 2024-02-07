@@ -115,7 +115,7 @@ author:
   links:
     - label: "Website"
       icon: "fas fa-fw fa-briefcase"
-      url: "http://news.khan.co.kr/reporter_article.html?id=302"
+   #   url: "http://news.khan.co.kr/reporter_article.html?id=302"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
