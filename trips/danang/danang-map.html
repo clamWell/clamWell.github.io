@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>다낭 가족여행 · 일정 지도</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1b2126;
+    --paper:#f4efe2;
+    --paper-2:#ece4d1;
+    --line: rgba(27,33,38,0.12);
+
+    /* theme accents per day, swapped via [data-theme] on <body> */
+    --accent:#2E6E7E;
+    --accent-2:#e3a857;
+    --accent-soft: rgba(46,110,126,0.12);
+    --bg-wash: #eef3f2;
+  }
+
+  body[data-theme="travel"]{
+    --accent:#28425c;
+    --accent-2:#7ba7bd;
+    --accent-soft: rgba(40,66,92,0.10);
+    --bg-wash: #eaeff3;
+  }
+  body[data-theme="rest"]{
+    --accent:#1f5f63;
+    --accent-2:#e3a857;
+    --accent-soft: rgba(31,95,99,0.12);
+    --bg-wash: #ecf3ee;
+  }
+  body[data-theme="hoian"]{
+    --accent:#b5522f;
+    --accent-2:#e3a857;
+    --accent-soft: rgba(181,82,47,0.12);
+    --bg-wash: #f6ece0;
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ height:100%; }
+  body{
+    margin:0;
+    font-family:'Inter', -apple-system, sans-serif;
+    color:var(--ink);
+    background: var(--bg-wash);
+    transition: background 0.5s ease;
+  }
+
+  .app{
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+    max-width:1280px;
+    margin:0 auto;
+    padding: 18px 20px 20px;
+  }
+
+  /* ---- Header ---- */
+  header{ margin-bottom:14px; }
+  .title-row{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:6px 16px;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:clamp(22px, 3vw, 30px);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .subtitle{
+    font-size:13px;
+    color:#5b6570;
+    font-family:'JetBrains Mono', monospace;
+  }
+
+  /* ---- Day scrubber ---- */
+  .day-scrubber{
+    display:flex;
+    gap:8px;
+    margin-top:16px;
+    overflow-x:auto;
+    padding-bottom:4px;
+  }
+  .day-pill{
+    flex: 1 1 0;
+    min-width:130px;
+    border:1px solid var(--line);
+    background: #fff;
+    border-radius:14px;
+    padding:10px 14px;
+    cursor:pointer;
+    text-align:left;
+    font-family:'Inter', sans-serif;
+    transition: all 0.25s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .day-pill .d-date{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:#7a8288;
+    display:block;
+    margin-bottom:3px;
+  }
+  .day-pill .d-label{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:15px;
+    display:block;
+  }
+  .day-pill .d-tag{
+    font-size:11px;
+    color:var(--pill-accent, #888);
+    margin-top:3px;
+    display:block;
+  }
+  .day-pill.active{
+    border-color: transparent;
+    background: var(--accent);
+    color:#fff;
+    box-shadow: 0 6px 16px -6px rgba(0,0,0,0.35);
+  }
+  .day-pill.active .d-date{ color: rgba(255,255,255,0.75); }
+  .day-pill.active .d-tag{ color: var(--accent-2); }
+
+  /* ---- Main layout ---- */
+  .board{
+    display:flex;
+    gap:16px;
+    flex:1;
+    min-height:0;
+    margin-top:16px;
+  }
+  .list-pane{
+    width:360px;
+    flex-shrink:0;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    overflow-y:auto;
+    padding:6px;
+  }
+  .map-pane{
+    flex:1;
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    position:relative;
+  }
+  #map{ width:100%; height:100%; }
+
+  .stop{
+    display:flex;
+    gap:12px;
+    padding:12px 10px;
+    border-radius:12px;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    position:relative;
+  }
+  .stop:hover{ background: var(--accent-soft); }
+  .stop.selected{
+    background: var(--accent-soft);
+    border-color: var(--accent);
+  }
+  .stop.flight{
+    cursor:default;
+    opacity:0.85;
+  }
+  .stop.flight:hover{ background:transparent; }
+
+  .stop-time{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11.5px;
+    color:#5b6570;
+    width:52px;
+    flex-shrink:0;
+    padding-top:2px;
+  }
+  .stop-body{ flex:1; min-width:0; }
+  .stop-name{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:15px;
+    margin:0 0 3px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .cat-dot{
+    width:8px; height:8px; border-radius:50%;
+    flex-shrink:0;
+    display:inline-block;
+  }
+  .stop-note{
+    font-size:12.5px;
+    color:#5b6570;
+    line-height:1.45;
+    margin:0;
+  }
+  .stop-tag{
+    display:inline-block;
+    font-size:10.5px;
+    padding:2px 7px;
+    border-radius:999px;
+    margin-top:6px;
+    background:#f0ede4;
+    color:#6b6154;
+    font-family:'Inter',sans-serif;
+    font-weight:500;
+  }
+  .divider{
+    height:1px;
+    background:var(--line);
+    margin:2px 12px;
+  }
+
+  /* Leaflet marker */
+  .pin{
+    width:26px; height:26px;
+    border-radius:50% 50% 50% 0;
+    transform: rotate(-45deg);
+    border:2px solid #fff;
+    box-shadow:0 3px 8px rgba(0,0,0,0.35);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .pin span{
+    transform: rotate(45deg);
+    font-size:12px;
+    color:#fff;
+  }
+  .pin.selected{
+    width:32px; height:32px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.5);
+    z-index:900 !important;
+  }
+  .leaflet-popup-content-wrapper{
+    border-radius:12px;
+    font-family:'Inter', sans-serif;
+  }
+  .leaflet-popup-content b{ font-family:'Fraunces', serif; font-size:14.5px; }
+
+  footer{
+    margin-top:12px;
+    font-size:11px;
+    color:#8a8f93;
+    text-align:center;
+    font-family:'JetBrains Mono', monospace;
+  }
+
+  @media (max-width: 820px){
+    .board{ flex-direction:column; }
+    .list-pane{ width:100%; max-height:38vh; }
+    .map-pane{ min-height:42vh; }
+  }
+</style>
+</head>
+<body data-theme="travel">
+<div class="app">
+
+  <header>
+    <div class="title-row">
+      <h1>다낭 가족여행 일정 지도</h1>
+      <span class="subtitle">2026.09.05 – 09.08 · Fusion Resort &amp; Villas Da Nang</span>
+    </div>
+
+    <div class="day-scrubber" id="dayScrubber"></div>
+  </header>
+
+  <div class="board">
+    <div class="list-pane" id="listPane"></div>
+    <div class="map-pane"><div id="map"></div></div>
+  </div>
+
+  <footer>지도: OpenStreetMap contributors · 위치는 참고용 근사 좌표입니다</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script>
+/* ---------------- DATA ---------------- */
+const CATS = {
+  flight:     { label:'항공',   color:'#8a8f93' },
+  airport:    { label:'공항',   color:'#28425c' },
+  resort:     { label:'리조트', color:'#1f5f63' },
+  market:     { label:'야시장', color:'#c98a1f' },
+  restaurant: { label:'식당',   color:'#b5522f' },
+  cafe:       { label:'카페',   color:'#a17a3f' },
+  sight:      { label:'명소',   color:'#7d6b45' },
+};
+
+const DAYS = [
+  {
+    id:'d1', theme:'travel', date:'9/5 (토)', label:'서울 → 다낭', tag:'이동일',
+    stops:[
+      { type:'flight', time:'09:10', name:'인천 출발 → 12:10 다낭 도착', note:'대한항공/베트남항공 등 직항, 비행시간 약 5시간', cat:'flight' },
+      { time:'12:10', name:'다낭 국제공항 도착', note:'입국수속 · 수하물 수령 후 리조트 픽업 차량 또는 Grab 이용', cat:'airport', lat:16.0439, lng:108.1993 },
+      { time:'13:00', name:'Fusion Resort 도착', note:'공식 체크인은 15:00부터. 도착이 이르므로 짐만 맡기고 라운지·수영장에서 대기 후 체크인', cat:'resort', lat:15.9569, lng:108.2637 },
+    ]
+  },
+  {
+    id:'d2', theme:'rest', date:'9/6 (일)', label:'리조트 휴식 + 야시장', tag:'휴식일',
+    stops:[
+      { time:'종일', name:'Fusion Resort', note:'인피니티풀·비치풀 물놀이, 점심 리조트 내 식사, 오후 Maia Spa · 낮잠 타임', cat:'resort', lat:15.9569, lng:108.2637 },
+      { time:'18:00', name:'Fusion Resort 출발 (일부 인원)', note:'호이안 야시장으로 이동, 차로 약 20~25분', cat:'resort', lat:15.9569, lng:108.2637 },
+      { time:'18:30', name:'응웬호앙 야시장', note:'리조트에서 가장 가까운 야시장. 내원교 앞 등불 거리 산책, 투본강 소원배 체험', cat:'market', lat:15.8794, lng:108.3279 },
+      { time:'저녁', name:'카고 클럽 (저녁식사)', note:'야시장 인근 레스토랑, 에어컨 완비. 마담 키우도 대안 가능', cat:'restaurant', lat:15.8788, lng:108.3258 },
+      { time:'21:00', name:'Fusion Resort 복귀', note:'잔류 인원(어르신·아기)은 비치 산책 및 스파로 저녁 보냄', cat:'resort', lat:15.9569, lng:108.2637 },
+    ]
+  },
+  {
+    id:'d3', theme:'hoian', date:'9/7 (월)', label:'호이안 근교 투어', tag:'투어일',
+    stops:[
+      { time:'08:30', name:'Fusion Resort 출발', note:'호이안 올드타운으로 이동, 차로 약 15~20분', cat:'resort', lat:15.9569, lng:108.2637 },
+      { time:'09:00', name:'호이안 올드타운 · 내원교', note:'노란 벽 골목과 전통가옥 산책, 유모차보다 아기띠 추천', cat:'sight', lat:15.8797, lng:108.3262 },
+      { time:'12:00', name:'마담 키우 (점심)', note:'투본강 앞, 향신료 약한 가정식 플래터. 에어컨 완비', cat:'restaurant', lat:15.8790, lng:108.3286 },
+      { time:'13:00', name:'호이안 로스터리 (카페)', note:'에어컨·소파 좌석, 점심 후 휴식하기 좋음', cat:'cafe', lat:15.8805, lng:108.3273 },
+      { time:'13:30', name:'Fusion Resort 복귀', note:'아기 낮잠 시간에 맞춰 이른 오후 귀환', cat:'resort', lat:15.9569, lng:108.2637 },
+      { time:'선택', name:'오행산 (마블마운틴)', note:'원하는 인원만 저녁 조명 관광으로 추가 가능, 리조트에서 차로 약 5분', cat:'sight', lat:16.0028, lng:108.2624 },
+    ]
+  },
+  {
+    id:'d4', theme:'travel', date:'9/8 (화)', label:'다낭 → 서울', tag:'이동일',
+    stops:[
+      { time:'오전', name:'Fusion Resort', note:'마지막 수영·조식, 짐 정리 후 체크아웃(12:00) 준비', cat:'resort', lat:15.9569, lng:108.2637 },
+      { time:'10:40', name:'Fusion Resort 출발', note:'13:10 출발편 기준, 공항까지 약 30분 + 여유시간 고려', cat:'resort', lat:15.9569, lng:108.2637 },
+      { time:'11:10', name:'다낭 국제공항 도착', note:'출국수속 · 면세구역', cat:'airport', lat:16.0439, lng:108.1993 },
+      { type:'flight', time:'13:10', name:'다낭 출발 → 19:55 서울 도착', note:'비행시간 약 4시간 45분', cat:'flight' },
+    ]
+  },
+];
+
+/* ---------------- STATE ---------------- */
+let currentDay = DAYS[0];
+let currentStopIdx = null;
+let map, markerLayer;
+
+/* ---------------- MAP INIT ---------------- */
+function initMap(){
+  map = L.map('map', { zoomControl:true, attributionControl:false })
+    .setView([15.98, 108.28], 11);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    subdomains:'abcd', maxZoom:19,
+  }).addTo(map);
+  L.control.attribution({position:'bottomright'}).addAttribution('&copy; OpenStreetMap &copy; CARTO').addTo(map);
+  markerLayer = L.layerGroup().addTo(map);
+}
+
+function pinIcon(cat, selected){
+  const color = CATS[cat]?.color || '#555';
+  return L.divIcon({
+    className:'',
+    html:`<div class="pin ${selected?'selected':''}" style="background:${color}"><span>●</span></div>`,
+    iconSize: selected ? [32,32] : [26,26],
+    iconAnchor: selected ? [16,32] : [13,26],
+    popupAnchor:[0,-28],
+  });
+}
+
+/* ---------------- RENDER: day scrubber ---------------- */
+function renderScrubber(){
+  const el = document.getElementById('dayScrubber');
+  el.innerHTML = '';
+  DAYS.forEach(day=>{
+    const btn = document.createElement('button');
+    btn.className = 'day-pill' + (day.id===currentDay.id ? ' active':'');
+    btn.innerHTML = `<span class="d-date">${day.date}</span><span class="d-label">${day.label}</span><span class="d-tag">${day.tag}</span>`;
+    btn.addEventListener('click', ()=> selectDay(day.id));
+    el.appendChild(btn);
+  });
+}
+
+/* ---------------- RENDER: list ---------------- */
+function renderList(){
+  const el = document.getElementById('listPane');
+  el.innerHTML = '';
+  currentDay.stops.forEach((s, i)=>{
+    if(s.type==='flight'){
+      const div = document.createElement('div');
+      div.className = 'stop flight';
+      div.innerHTML = `
+        <div class="stop-time">✈</div>
+        <div class="stop-body">
+          <p class="stop-name">${s.name}</p>
+          <p class="stop-note">${s.note}</p>
+        </div>`;
+      el.appendChild(div);
+      return;
+    }
+    const div = document.createElement('div');
+    div.className = 'stop' + (i===currentStopIdx ? ' selected':'');
+    const cat = CATS[s.cat];
+    div.innerHTML = `
+      <div class="stop-time">${s.time}</div>
+      <div class="stop-body">
+        <p class="stop-name"><span class="cat-dot" style="background:${cat.color}"></span>${s.name}</p>
+        <p class="stop-note">${s.note}</p>
+        <span class="stop-tag">${cat.label}</span>
+      </div>`;
+    div.addEventListener('click', ()=> selectStop(i));
+    el.appendChild(div);
+  });
+}
+
+/* ---------------- RENDER: map markers ---------------- */
+function renderMarkers(){
+  markerLayer.clearLayers();
+  const bounds = [];
+  currentDay.stops.forEach((s, i)=>{
+    if(s.type==='flight') return;
+    const marker = L.marker([s.lat, s.lng], { icon: pinIcon(s.cat, i===currentStopIdx) });
+    marker.bindPopup(`<b>${s.name}</b><br/>${s.time} · ${CATS[s.cat].label}<br/><span style="font-size:12.5px;color:#555">${s.note}</span>`);
+    marker.on('click', ()=> selectStop(i));
+    marker.addTo(markerLayer);
+    marker._stopIdx = i;
+    bounds.push([s.lat, s.lng]);
+  });
+  if(bounds.length){
+    map.fitBounds(bounds, { padding:[40,40], maxZoom:14 });
+  }
+}
+
+/* ---------------- ACTIONS ---------------- */
+function selectDay(dayId){
+  currentDay = DAYS.find(d=>d.id===dayId);
+  currentStopIdx = null;
+  document.body.setAttribute('data-theme', currentDay.theme);
+  renderScrubber();
+  renderList();
+  renderMarkers();
+}
+
+function selectStop(idx){
+  currentStopIdx = idx;
+  renderList();
+  renderMarkers();
+  const s = currentDay.stops[idx];
+  if(s.lat){
+    map.flyTo([s.lat, s.lng], 15, { duration:0.6 });
+    markerLayer.eachLayer(m=>{
+      if(m._stopIdx === idx) setTimeout(()=> m.openPopup(), 350);
+    });
+  }
+}
+
+/* ---------------- INIT ---------------- */
+initMap();
+selectDay('d1');
+</script>
+</body>
+</html>
